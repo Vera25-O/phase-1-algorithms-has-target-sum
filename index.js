@@ -1,5 +1,13 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+    for (let n = 0; n < array.length; n++) {
+      const complement = target - array[n];
+      for (let x = n + 1; x < array.length; x++) {
+        if (array[x] === complement) return true;
+      }
+    }
+    return false;
+  
 }
 
 /* 
@@ -32,3 +40,4 @@ if (require.main === module) {
 }
 
 module.exports = hasTargetSum;
+
